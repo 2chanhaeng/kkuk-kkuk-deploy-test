@@ -1,5 +1,5 @@
 import type { FormState } from 'react-hook-form';
-import { ButtonProps, BasicButton as Button, ButtonVariant } from '@/components/ui/button';
+import { ButtonProps, Button, ButtonVariant } from '@/components/ui/button';
 import type { ZodType } from 'zod';
 
 interface SubmitProps<FormValues extends ZodType<any, any, any>> extends ButtonProps {
