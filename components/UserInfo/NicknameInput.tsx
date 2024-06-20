@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { MAKING_MESSAGE } from '@/lib/constants';
 import { Input } from '@/components/ui/input';
-import { Button } from '@/stories/Button';
+import { Button } from '@/components/ui/button';
 
 export default function NicknameInput({ name }: { name: string }) {
   // const ref = createRef<HTMLInputElement>();
@@ -20,13 +20,9 @@ export default function NicknameInput({ name }: { name: string }) {
           /* onChange={(e) => setValue(e.target.value)} */
         />
       </label>
-      <Button
-        label="수정하기"
-        variant={modified ? 'default' : 'disabled'}
-        className={styles.modifyButton}
-        type="button"
-        onClick={() => alert(MAKING_MESSAGE)}
-      />
+      <Button variant={modified ? 'default' : 'disabled'} className={styles.modifyButton} type="button" onClick={() => alert(MAKING_MESSAGE)}>
+        수정하기
+      </Button>
     </form>
   );
 }

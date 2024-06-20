@@ -2,9 +2,8 @@ import { User } from 'next-auth';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { DEFAULT_PROFILE, MY_PAGE_PATH } from '@/lib/constants';
 import { Pencil, Settings, Stamp } from '@/lib/icons';
-import { Button } from '@/stories/Button';
+import { Button } from '@/components/ui/button';
 import { NavBarItemProps } from './types';
-import path from 'path';
 
 export const headerLogoItems: NavBarItemProps[] = [
   {
@@ -33,7 +32,11 @@ export const getHeaderUserMenuItems = (user?: Pick<User, 'image'>): NavBarItemPr
   { href: '/my/settings', Inner: <Settings className="h-8 w-8 fill-foreground" />, showAtMyPage: true },
   {
     href: '/api/auth/signin',
-    Inner: <Button label="로그인" type="button" className="text-base px-4 py-2 h-fit rounded-lg" />,
+    Inner: (
+      <Button type="button" className="text-base px-4 py-2 h-fit rounded-lg">
+        로그인
+      </Button>
+    ),
     isGuest: true,
   },
 ];

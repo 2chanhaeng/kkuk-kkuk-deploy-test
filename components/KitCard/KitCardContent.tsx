@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { CardContent, CardTitle } from '@/components/ui/card';
-import { Tag } from '@/stories/Tag';
+import { Tag } from '@/components/Tag';
 import { Bookmark, Heart } from '@/lib/icons';
 import { KitCardVariants } from './types';
 import { getConditions, getContentStyles } from './lib';
@@ -27,7 +27,13 @@ export default function KitCardContent({ title, tags, name, image, variant }: Ki
 }
 
 function Tags({ tags, styles }: { tags: string[]; styles: ReturnType<typeof getContentStyles> }) {
-  return <div className={styles.tags}>{tags?.map((tag) => <Tag key={tag} label={tag} className={styles.tag} />)}</div>;
+  return (
+    <div className={styles.tags}>
+      {tags?.map((tag) => (
+        <Tag key={tag} label={tag} className={styles.tag} />
+      ))}
+    </div>
+  );
 }
 
 function Uploader({ name, image, styles }: { name: string; image: string; styles: ReturnType<typeof getContentStyles> }) {
